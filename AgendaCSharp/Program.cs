@@ -2,18 +2,17 @@
 
 namespace AgendaCSharp
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            //Declarando variáveis do Sistema
+            bool Flag = true;
+            Contact[] Agenda = new Contact[100];
 
-            struct Contato
+            while (Flag)
             {
-
-            }
-
-            
+                FunctionSystem.Menu(ref Flag, ref Agenda);
+            }            
         }
     }
 }
