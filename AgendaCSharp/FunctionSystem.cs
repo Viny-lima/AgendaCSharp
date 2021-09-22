@@ -72,7 +72,6 @@ namespace AgendaCSharp
             }                      
         }
 
-
         public static void AddAgenda(ref Contact[] Agenda)
         {
             //Escolhendo tipo de Conatato
@@ -103,7 +102,7 @@ namespace AgendaCSharp
             string email = (Console.ReadLine()).Trim();
 
             //Recolhendo o endereço
-            Console.WriteLine("\n==========Endereço==========");
+            Console.WriteLine("\n================Endereço===============");
             Console.Write($"\nBairro: ");
             string bairro = (Console.ReadLine()).Trim();
             Console.Write($"Cidade: ");
@@ -155,21 +154,16 @@ namespace AgendaCSharp
             {
                 if (Agenda[i].StatusContact == Status.Active)
                 {
-                    if(Agenda[i].Phone == phoneDel)
-                    {
+                    if (Agenda[i].Phone == phoneDel)
+                    {                        
                         Console.WriteLine("=======================================");
                         Agenda[i].ExibirContato();
                         Console.WriteLine("\nContato deletado com sucesso ; )");
                         Console.WriteLine("=======================================\n");
                         Agenda.SetValue(new Contact(), i);
                         break;
-                    } 
-                } else
-                {
-                    Console.WriteLine("Contato não encontrado na Agenda!");
-                    break;
+                    }
                 }
-
             }
         }
 
@@ -182,17 +176,13 @@ namespace AgendaCSharp
             {
                 if (contato.StatusContact == Status.Active)
                 {
-                    Console.WriteLine("\n           >>>Resultados<<<            ");
                     if ((contato.Firstname).ToLower() == (objectSearch).ToLower())
-                    {                        
+                    {                       
                         Console.WriteLine("=======================================");
+                        Console.WriteLine("\n            >>>Resultado<<<            ");
                         contato.ExibirContato();
                         Console.WriteLine("\n=======================================");
-                    }                    
-                } else
-                {
-                    Console.WriteLine("Contato não encontrado na Agenda!");
-                    break;
+                    }
                 }
             }
 
@@ -207,25 +197,20 @@ namespace AgendaCSharp
             {
                 if (contato.StatusContact == Status.Active)
                 {
-                    Console.WriteLine("\n           >>>Resultados<<<            ");
                     if ((contato.Fullname).ToLower() == (objectSearch).ToLower())
-                    {                        
+                    {
                         Console.WriteLine("=======================================");
+                        Console.WriteLine("\n            >>>Resultado<<<            ");
                         contato.ExibirContato();
                         Console.WriteLine("\n=======================================");
                     }
-                }
-                else
-                {
-                    Console.WriteLine("Contato não encontrado na Agenda!");
-                    break;
                 }
             }
         }
 
         public static void SerchTypeContact(ref Contact[] Agenda)
         {
-            Console.Write("\nSELECIONE O TIPO DE CONTATO");
+            Console.WriteLine("\nSELECIONE O TIPO DE CONTATO");
             Console.WriteLine("[1] Celular");
             Console.WriteLine("[2] Trabalho");
             Console.WriteLine("[3] Casa");
@@ -241,20 +226,15 @@ namespace AgendaCSharp
             foreach (Contact contato in Agenda)
             {
                 if (contato.StatusContact == Status.Active)
-                {
-                    Console.WriteLine("\n           >>>Resultados<<<            ");
+                {                    
                     if (contato.Typephone == objectSearch)
-                    {                        
+                    {
                         Console.WriteLine("=======================================");
+                        Console.WriteLine("\n            >>>Resultado<<<            ");
                         contato.ExibirContato();
                         Console.WriteLine("\n=======================================");
                     }
-                }
-                else
-                {
-                    Console.WriteLine("Contato não encontrado na Agenda!");
-                    break;
-                }
+                }                
             }
         }
 
@@ -266,23 +246,17 @@ namespace AgendaCSharp
             foreach (Contact contato in Agenda)
             {
                 if (contato.StatusContact == Status.Active)
-                {
-                    Console.WriteLine("\n           >>>Resultados<<<            ");
+                {                    
                     //1 Corresponde a cidade no Array de Address
                     if ((contato.Address[1]).ToLower() == (objectSearch).ToLower())
                     {
                         Console.WriteLine("=======================================");
+                        Console.WriteLine("\n            >>>Resultado<<<            ");
                         contato.ExibirContato();
                         Console.WriteLine("\n=======================================");
                     }
                 }
-                else
-                {
-                    Console.WriteLine("Contato não encontrado na Agenda!");
-                    break;
-                }
             }
         }
-
     }
 }

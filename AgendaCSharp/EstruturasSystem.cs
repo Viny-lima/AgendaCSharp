@@ -71,8 +71,7 @@ namespace AgendaCSharp
         public void ExibirContato()
         {
             
-            Console.WriteLine($"\n[Nome] {this.Fullname}");
-            Console.WriteLine($"\n[First Nome] {this.Firstname}");
+            Console.WriteLine($"\n[Nome] {this.Fullname}");            
             Console.WriteLine($"[Tipo de Contato] {this.Typephone}");
             Console.WriteLine($"[Telefone] {this.Phone}");
             Console.WriteLine($"[E-mail] {this.Email}");
