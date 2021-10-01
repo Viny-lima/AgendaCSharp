@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace AgendaCSharp
 {
     //Usamos o Tipo de telefone para evitar confução com a estrutura maior
